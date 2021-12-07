@@ -55,7 +55,7 @@ const html = """
 <body>
   <main>
     <div id="icon">&#x1F3C7;</div>
-    <div id="text">Press the button below to sign in using your Localtest.me account.</div>
+    <div id="text">Press the button below to sign in using your Localhost account.</div>
     <div id="button"><a href="foobar://success?code=1337">Sign in</a></div>
   </main>
 </body>
@@ -82,7 +82,9 @@ class _MyAppState extends State<MyApp> {
     final server = await HttpServer.bind('127.0.0.1', 43823);
 
     server.listen((req) async {
-      setState(() { _status = 'Received request!'; });
+      setState(() {
+        _status = 'Received request!';
+      });
 
       req.response.headers.add('Content-Type', 'text/html');
       req.response.write(html);
@@ -91,14 +93,19 @@ class _MyAppState extends State<MyApp> {
   }
 
   void authenticate() async {
-    final url = 'http://localtest.me:43823/';
+    final url = 'http://localhost:43823/';
     final callbackUrlScheme = 'foobar';
 
     try {
-      final result = await FlutterWebAuth.authenticate(url: url, callbackUrlScheme: callbackUrlScheme);
-      setState(() { _status = 'Got result: $result'; });
+      final result = await FlutterWebAuth.authenticate(
+          url: url, callbackUrlScheme: callbackUrlScheme);
+      setState(() {
+        _status = 'Got result: $result';
+      });
     } on PlatformException catch (e) {
-      setState(() { _status = 'Got error: $e'; });
+      setState(() {
+        _status = 'Got error: $e';
+      });
     }
   }
 
@@ -117,7 +124,9 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(height: 80),
               ElevatedButton(
                 child: Text('Authenticate'),
-                onPressed: () { this.authenticate(); },
+                onPressed: () {
+                  this.authenticate();
+                },
               ),
             ],
           ),
