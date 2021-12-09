@@ -1,8 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'dart:async';
-import 'dart:io' show HttpServer;
 
 import 'package:flutter_web_auth_example/authentication_page.dart';
 import 'package:flutter_web_auth_example/home_page.dart';
