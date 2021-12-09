@@ -1,4 +1,4 @@
-import 'dart:io';
+import 'dart:io' show HTTPServer;
 
 import 'package:flutter_web_auth/flutter_web_auth.dart';
 
