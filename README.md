@@ -70,7 +70,7 @@ final accessToken = jsonDecode(response.body)['access_token'] as String;
 
 ## Setup
 
-Setup works as for any Flutter plugin, expect the Android and Web caveats outlined below:
+Setup works as it is for any Flutter plugin, expect the Android and Web caveats outlined below:
 
 ### Android
 
